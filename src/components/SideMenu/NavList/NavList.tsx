@@ -1,3 +1,6 @@
+import { FaRegCheckSquare, FaRegClock, FaTasks } from "react-icons/fa";
+import NavItem from "./NavItem/NavItem";
+
 interface NavItemType {
   id: number;
   label: string;
@@ -5,12 +8,8 @@ interface NavItemType {
   icon: React.ReactNode;
 }
 
-import React from "react";
-import { FaRegCheckSquare, FaRegClock, FaTasks } from "react-icons/fa";
-import NavItem from "./NavItem/NavItem";
-
 const NavList = () => {
-  const navList: NavItemType[] = [
+  const navlist: NavItemType[] = [
     {
       id: 1,
       label: "All Tasks",
@@ -19,8 +18,8 @@ const NavList = () => {
     },
     {
       id: 2,
-      label: "Complete Tasks",
-      link: "/completerd",
+      label: "Completed Tasks",
+      link: "/completed",
       icon: <FaRegCheckSquare className="size-5" />,
     },
     {
@@ -32,7 +31,7 @@ const NavList = () => {
   ];
   return (
     <div className="mt-24">
-      {navList.map((item) => (
+      {navlist.map((item) => (
         <NavItem
           key={item.id}
           label={item.label}
